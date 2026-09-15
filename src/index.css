@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nutrisense-navy: #072B4A;
+  --nutrisense-blue: #004E75;
+  --nutrisense-ieee-blue: #0076A8;
+  --nutrisense-purple: #782980;
+  --nutrisense-purple-secondary: #9A4E9C;
+  --surface: #FFFFFF;
+  --background: #F6F8FA;
+  --text-primary: #172B3A;
+  --text-secondary: #667085;
+  --border: #E1E7EC;
+  --border-grid: #E8EDF1;
+  --status-success: #168567;
+  --status-warning: #DFA321;
+  --status-error: #C94C4C;
+  --activity: #8CBCCB;
+}
+
+@layer base {
+  html {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+  }
+
+  ::selection {
+    background-color: var(--nutrisense-navy);
+    color: #FFFFFF;
+  }
+}
+
+@layer components {
+  /* Panel unificado institucional */
+  .institutional-panel {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(7, 43, 74, 0.04);
+  }
+
+  /* Status tag discreto */
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .status-badge-success {
+    background-color: rgba(22, 133, 103, 0.10);
+    color: var(--status-success);
+    border: 1px solid rgba(22, 133, 103, 0.25);
+  }
+
+  .status-badge-warning {
+    background-color: rgba(223, 163, 33, 0.10);
+    color: var(--status-warning);
+    border: 1px solid rgba(223, 163, 33, 0.25);
+  }
+
+  .status-badge-error {
+    background-color: rgba(201, 76, 76, 0.10);
+    color: var(--status-error);
+    border: 1px solid rgba(201, 76, 76, 0.25);
+  }
+}
+
+/* Scrollbar mínimo */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #D5DDE3;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A0AEC0;
+}
+
+/* Tooltips Recharts consistentes con la paleta */
+.recharts-default-tooltip {
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 12px rgba(7, 43, 74, 0.08) !important;
+  padding: 8px 12px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 12px !important;
+}
